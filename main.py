@@ -1,11 +1,12 @@
 ##############
 ### IMPORTANT: You can rename this file 'boot.py', but after no acces to the board... forever!
-### I will add the possibilty to commuicate by uart... 
+### you can uncomment the lines started by #!# to preserve the possibility to communicate... but you loose the full security... 
 
 from machine import Pin, PWM
 from time import sleep_ms, ticks_ms
 
 bL = Pin(17, Pin.IN, Pin.PULL_UP)
+
 led = PWM(Pin(25))
 led.freq(20)
 
@@ -22,6 +23,10 @@ while (t2 - t1) < 10000:
 
 if n == 1:
     import go.py
+#!#if n == 3:
+#!#    fil = open('boot.py', 'w')
+#!#    fil.write('import machine\n')
+#!#    fil.close()
 else:
     led.duty_u16(100)
     while n < 100:
