@@ -1,3 +1,7 @@
+##############
+### IMPORTANT: You can rename this file 'boot.py', but after no acces to the board... forever!
+### I will add the possibilty to commuicate by uart... 
+
 from machine import Pin, PWM
 from time import sleep_ms, ticks_ms
 
